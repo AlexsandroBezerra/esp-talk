@@ -1,0 +1,30 @@
+menu "APP Configuration"
+
+    config BLINK_GPIO
+        int "Blink GPIO number"
+        range 1 33
+        default 2
+        help
+            GPIO number (IOxx) to blink on and off the LED.
+            Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
+
+    config ESPNOW_CHANNEL
+        int "Channel"
+        default 1
+        range 0 14
+        help
+            The channel on which sending and receiving ESPNOW data.
+
+    config ESPNOW_PMK
+        string "ESPNOW primary master key"
+        default "pmk1234567890123"
+        help
+            ESPNOW primary master for the example to use. The length of ESPNOW primary master must be 16 bytes.
+
+    config ESPNOW_LMK
+        string "ESPNOW local master key"
+        default "lmk1234567890123"
+        help
+            ESPNOW local master for the example to use. The length of ESPNOW local master must be 16 bytes.
+
+endmenu
